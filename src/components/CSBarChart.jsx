@@ -2,7 +2,7 @@
 
 import { BarChart } from '@tremor/react';
 
-export default function CSBarChart ({ data, index, categories, xAxisLabel, yAxisLabel }) {
+export default function CSBarChart({ data, index, categories, xAxisLabel, yAxisLabel }) {
 
   return (
     <div className="w-full max-w-[800px]">

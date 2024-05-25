@@ -1,6 +1,6 @@
 import CSBarChart from "@/components/CSBarChart";
 
-async function getData(id: string) {
+async function getData(id) {
   const res = await fetch(`https://api-web.nhle.com/v1/player/${id}/landing`);
   const data = await res.json();
 
@@ -66,7 +66,7 @@ async function getData(id: string) {
   };
 }
  
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }) {
   const data = await getData(params.id);
 
   return (
