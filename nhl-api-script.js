@@ -29,6 +29,7 @@ async function fetchRoster(team, season) {
 }
 
 // TODO - Create function to fetch data and update JSON with newly added players
+// TODO - Sort data by firstName before writing to JSON
 
 // The Object
 const players = {};
@@ -57,25 +58,34 @@ const players = {};
       if (roster) {
         const { forwards, defensemen, goalies } = roster;
 
-        forwards.forEach(forward => players[`${forward.id}`] = {
-          id: forward.id,
-          name: `${forward.firstName.default} ${forward.lastName.default}`,
-          headshot: forward.headshot,
-          position: forward.positionCode,
+        forwards.forEach(forward => {
+          players[`${forward.id}`] = {
+            id: forward.id,
+            firstName: forward.firstName.default,
+            lastName: forward.lastName.default,
+            headshot: forward.headshot,
+            position: forward.positionCode,
+          }
         });
       
-        defensemen.forEach(defense => players[`${defense.id}`] = {
-          id: defense.id,
-          name: `${defense.firstName.default} ${defense.lastName.default}`,
-          headshot: defense.headshot,
-          position: defense.positionCode,
+        defensemen.forEach(defense => {
+          players[`${defense.id}`] = {
+            id: defense.id,
+            firstName: defense.firstName.default,
+            lastName: defense.lastName.default,
+            headshot: defense.headshot,
+            position: defense.positionCode,
+          }
         });
       
-        goalies.forEach(goalie => players[`${goalie.id}`] = {
-          id: goalie.id,
-          name: `${goalie.firstName.default} ${goalie.lastName.default}`,
-          headshot: goalie.headshot,
-          position: goalie.positionCode,
+        goalies.forEach(goalie => {
+          players[`${goalie.id}`] = {
+            id: goalie.id,
+            firstName: goalie.firstName.default,
+            lastName: goalie.lastName.default,
+            headshot: goalie.headshot,
+            position: goalie.positionCode,
+          }
         });
       }
 
@@ -85,7 +95,7 @@ const players = {};
     i++;
   }
 
-  const json = JSON.stringify(players);
+  const json = JSON.stringify(Object.values(players));
 
-  fs.writeFile('players.json', json, 'utf8', () => {});
+  fs.writeFile('players-new-2.json', json, 'utf8', () => {});
 })();
