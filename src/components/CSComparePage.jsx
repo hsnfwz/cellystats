@@ -59,7 +59,7 @@ export default function CSComparePlayerPage({ players }) {
           </div>
         </div>
       </div>
-      <div className="flex gap-8">
+      <div className="flex flex-col lg:flex-row gap-8">
         <CSSearchBar
           players={players}
           selectedPlayer={playerOne}

@@ -13,7 +13,7 @@ export default function CSMainPage() {
     <div className="flex flex-col lg:flex-row">
       <div className="flex flex-col gap-8 p-4 bg-white">
         <div className="min-h-[calc(100vh-42px)] flex flex-col gap-8 justify-center">
-          <h1 className="text-center text-8xl font-bold"><span className="text-black">Celly</span><span className="text-[#93a3ad]">Stats</span></h1>
+          <h1 className="text-center text-5xl lg:text-8xl font-bold"><span className="text-black">Celly</span><span className="text-[#93a3ad]">Stats</span></h1>
           <h2 className="text-center text-2xl">Search, view, and compare NHL player statistics</h2>
         </div>
         <div className="flex flex-col gap-4">
