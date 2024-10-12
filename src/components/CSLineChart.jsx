@@ -1,11 +1,11 @@
 "use client";
 
-import { BarChart } from '@tremor/react';
+import { LineChart } from '@tremor/react';
 
-export default function CSBarChart({ data, index, categories, xAxisLabel, yAxisLabel }) {
+export default function CSLineChart({ data, index, categories, xAxisLabel, yAxisLabel }) {
 
   return (
-    <BarChart
+    <LineChart
       data={data}
       index={index}
       categories={categories}
