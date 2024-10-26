@@ -1,11 +1,9 @@
 # CellyStats
 
-![CellyStats](public/images/celly-stats-preview.png)
-
 [CellyStats](https://cellystats.vercel.app/)
 
 ## Description
-Website to search any NHL player and display their statistics using tables and charts
+Search, view, and compare National Hockey League (NHL) player statistics
 
 ## Tech Stack
 - HTML
@@ -14,9 +12,6 @@ Website to search any NHL player and display their statistics using tables and c
 - JavaScript
 - React
 - Next
-- Tremor
-- Vercel
-- NHL API
 
 ## Contributions
 Designed and built by Hussein Fawaz
