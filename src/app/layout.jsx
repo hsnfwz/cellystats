@@ -19,9 +19,6 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
-        {/* <footer className="p-4 bg-black text-white text-xs">
-          <p>Designed and built by Hussein Fawaz</p>
-        </footer> */}
       </body>
     </html>
   );

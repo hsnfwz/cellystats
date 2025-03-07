@@ -1,22 +1,19 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-
 import Link from 'next/link';
 
 import { trendingPlayers } from '@/helpers/players';
 
 export default function CSMainPage() {
-  const [hoverPlayer, setHoverPlayer] = useState();
-
   return (
-    <div className="flex flex-col lg:flex-row">
-      <div className="flex flex-col gap-8 p-4 bg-white">
-        <div className="min-h-[calc(100vh-42px)] flex flex-col gap-8 justify-center">
+    <div className="flex flex-col gap-8">
+        <div className="min-h-[calc(100vh-42px)] flex flex-col gap-8 justify-center p-4">
           <h1 className="text-center text-5xl lg:text-8xl font-bold"><span className="text-black">Celly</span><span className="text-[#93a3ad]">Stats</span></h1>
           <h2 className="text-center text-2xl">Search, view, and compare NHL player statistics</h2>
         </div>
-        <div className="flex flex-col gap-4">
+
+        <div className="flex flex-col items-center gap-8 p-4 w-full max-w-screen-lg m-auto">
+        <div className="flex flex-col gap-4 w-full">
           <h2 className="font-bold text-2xl">Trending Players</h2>
           <div className="flex flex-col">
             {(Object.values(trendingPlayers)).map((player, index) => (
@@ -25,9 +22,6 @@ export default function CSMainPage() {
                   key={index}
                   className="flex justify-between p-4 hover:bg-neutral-200"
                   href={`/players/${player.id}`}
-                  onMouseEnter={() => setHoverPlayer(player)}
-                  onMouseLeave={() => setHoverPlayer(undefined)}
-                  onFocus={() => setHoverPlayer(player)}
                 >
                   <img src={player.headshot} width="100px" height="100px" className="self-center object-cover object-center rounded-full border-2 bg-white border-black" />
                   <div className="flex flex-col self-center">
@@ -42,7 +36,7 @@ export default function CSMainPage() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 w-full">
           <h2 className="font-bold text-2xl">Trending Comparisons</h2>
           <div className="flex flex-col">
             <Link className="relative flex justify-between items-center hover:bg-neutral-200 p-4" href={`/compare/${trendingPlayers.CONNOR_MCDAVID.id}/${trendingPlayers.AUSTON_MATTHEWS.id}`}>
@@ -100,12 +94,10 @@ export default function CSMainPage() {
             </Link>
           </div>
         </div>
-      </div>
-      <div className="relative top-0 right-0 w-full min-h-[calc(100vh-42px)] hidden lg:block">
-        <div className="sticky top-[42px] right-0 flex items-center justify-center">
-          <img src={hoverPlayer?.background || '/images/rogers_arena.jpg'} width="100px" height="100px" className="w-full h-[calc(100vh-42px)] object-cover" />
         </div>
-      </div>
+
+
+        
     </div>
   );
 }
