@@ -5,7 +5,6 @@ const trendingPlayers = {
     lastName: 'McDavid',
     headshot: 'https://assets.nhle.com/mugs/nhl/20232024/EDM/8478402.png',
     position: 'C',
-    background: '/images/trending-players/connor_mcdavid.jpg',
   },
   AUSTON_MATTHEWS: {
     id: 8479318,
@@ -13,7 +12,6 @@ const trendingPlayers = {
     lastName: 'Matthews',
     headshot: 'https://assets.nhle.com/mugs/nhl/20232024/TOR/8479318.png',
     position: 'C',
-    background: '/images/trending-players/auston_matthews.jpg',
   },
   QUINN_HUGHES: {
     id: 8480800,
@@ -21,7 +19,6 @@ const trendingPlayers = {
     lastName: 'Hughes',
     headshot: 'https://assets.nhle.com/mugs/nhl/20232024/VAN/8480800.png',
     position: 'D',
-    background: '/images/trending-players/quinn_hughes.jpg',
   },
   CALE_MAKAR: {
     id: 8480069,
@@ -29,7 +26,6 @@ const trendingPlayers = {
     lastName: 'Makar',
     headshot: 'https://assets.nhle.com/mugs/nhl/20232024/COL/8480069.png',
     position: 'D',
-    background: '/images/trending-players/cale_makar.jpg',
   },
   THATCHER_DEMKO: {
     id: 8477967,
@@ -37,7 +33,6 @@ const trendingPlayers = {
     lastName: 'Demko',
     headshot: 'https://assets.nhle.com/mugs/nhl/20232024/VAN/8477967.png',
     position: 'G',
-    background: '/images/trending-players/thatcher_demko.jpg',
   },
   CONNOR_HELLEBUYCK: {
     id: 8476945,
@@ -45,7 +40,6 @@ const trendingPlayers = {
     lastName: 'Hellebuyck',
     headshot: 'https://assets.nhle.com/mugs/nhl/20232024/WPG/8476945.png',
     position: 'G',
-    background: '/images/trending-players/connor_hellebuyck.jpg',
   }
 }
 

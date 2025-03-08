@@ -8,7 +8,10 @@ export default function CSMainPage() {
   return (
     <div className="flex flex-col gap-8">
         <div className="min-h-[calc(100vh-42px)] flex flex-col gap-8 justify-center p-4">
-          <h1 className="text-center text-5xl lg:text-8xl font-bold"><span className="text-black">Celly</span><span className="text-[#93a3ad]">Stats</span></h1>
+          <div className="flex gap-4 items-center justify-center">
+            <img src={'/images/puck.png'} alt="logo" className="object-contain h-[64px] lg:h-[128px]" />
+            <h1 className="text-center text-5xl lg:text-8xl font-bold"><span className="text-black">Celly</span><span className="text-[#93a3ad]">Stats</span></h1>
+          </div>
           <h2 className="text-center text-2xl">Search, view, and compare NHL player statistics</h2>
         </div>
 
