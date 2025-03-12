@@ -1,15 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 import CSSearchBar from '@/components/CSSearchBar';
 
-import { trendingPlayers } from '@/helpers/players';
+import { getPlayers, trendingPlayers } from '@/helpers/players';
 
-export default function CSComparePlayerPage({ players }) {
+export default function CSComparePlayerPage() {
   const [playerOne, setPlayerOne] = useState();
   const [playerTwo, setPlayerTwo] = useState();
+
+  const [players, setPlayers] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      const _players = await getPlayers();
+      setPlayers(_players);
+    }
+
+    getData();
+  }, []);
 
   return (
     <div className="flex flex-col gap-8 w-full max-w-screen-lg m-auto">

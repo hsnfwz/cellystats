@@ -480,9 +480,16 @@ function getComparePlayerStats(playerOneData, playerTwoData) {
   return combinedPlayerStats;
 }
 
+async function getPlayers() {
+  const response = await fetch('/players.json');
+  const data = await response.json();
+  return data;
+}
+
 export {
   trendingPlayers,
   getPlayerStats,
   getPlayerTableStats,
   getComparePlayerStats,
+  getPlayers,
 }

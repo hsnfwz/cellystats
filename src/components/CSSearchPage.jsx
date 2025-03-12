@@ -1,12 +1,24 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+
 import Link from 'next/link';
 
 import CSSearchBar from '@/components/CSSearchBar';
 
-import { trendingPlayers } from '@/helpers/players';
+import { trendingPlayers, getPlayers } from '@/helpers/players';
 
-export default function CSSearchPage({ players }) {
+export default function CSSearchPage() {
+  const [players, setPlayers] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      const _players = await getPlayers();
+      setPlayers(_players);
+    }
+
+    getData();
+  }, []);
 
   return (
     <div className="flex flex-col gap-8 w-full max-w-screen-lg m-auto">
