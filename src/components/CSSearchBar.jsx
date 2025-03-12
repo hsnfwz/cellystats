@@ -40,51 +40,40 @@ export default function CSSearchBar ({ players, selectedPlayer, handleSelectPlay
 
   return (
     <div className="flex flex-col gap-8 w-full">
-      <input type="text" placeholder={placeholder || 'Search NHL Players'} className="focus:border-2 focus:border-[#93a3ad] focus:outline-none focus:ring-0 rounded-full px-4 py-2 border-2 border-black bg-white w-full" onInput={(e) => debounceSearch(e)} />
+      <input type="text" placeholder={placeholder || 'Search Players'} className="focus:border focus:border-[#93a3ad] focus:outline-none focus:ring-0 rounded px-4 py-2 border border-black bg-white w-full" onInput={(e) => debounceSearch(e)} />
       
       {searchResultsDisplay.length > 0 && (
         <div className="flex flex-col gap-4">
           <h2 className="font-bold text-2xl">Results</h2>
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-full divide-y divide-neutral-200">
             {searchResultsDisplay.map((player, index) => (
-              <>
+              <div key={index} className="w-full flex flex-col">
                 {!handleSelectPlayer && (
-                  <>
                     <Link
-                      key={index}
                       className="flex justify-between p-4 hover:bg-neutral-200"
                       href={`/players/${player.id}`}
                     >
-                      <img src={player.headshot} width="100px" height="100px" className="self-center object-cover object-center rounded-full border-2 bg-white border-black" />
+                      <img src={player.headshot} width="100px" height="100px" className="self-center object-cover object-center rounded-full border bg-white border-black" />
                       <div className="flex flex-col self-center">
                         <span className="text-right">{player.firstName}</span>
                         <span className="text-right font-bold text-2xl">{player.lastName}</span>
                       </div>
                     </Link>
-                    {index !== searchResultsDisplay.length - 1 && (
-                      <div className="h-[1px] w-full bg-neutral-200"></div>
-                    )}
-                  </>
                 )}
                 {handleSelectPlayer && (
-                  <>
                     <button
                       className="flex justify-between p-4 hover:bg-neutral-200 disabled:pointer-events-none disabled:bg-blue-500 disabled:text-white"
                       onClick={() => handleSelectPlayer(player)}
                       disabled={selectedPlayer?.id === player.id}
                     >
-                      <img src={player.headshot} width="100px" height="100px" className="self-center object-cover object-center rounded-full border-2 bg-white border-black" />
+                      <img src={player.headshot} width="100px" height="100px" className="self-center object-cover object-center rounded-full border bg-white border-black" />
                       <div className="flex flex-col self-center">
                         <span className="text-right">{player.firstName}</span>
                         <span className="text-right font-bold text-2xl">{player.lastName}</span>
                       </div>
                     </button>
-                    {index !== searchResultsDisplay.length - 1 && (
-                      <div className="h-[1px] w-full bg-neutral-200"></div>
-                    )}
-                  </>
                 )}
-              </>
+              </div>
             ))}
           </div>
           {searchResults.length !== searchResultsDisplay.length && (

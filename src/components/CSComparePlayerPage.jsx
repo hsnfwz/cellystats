@@ -7,10 +7,10 @@ import CSTable from "@/components/CSTable";
 export default function CSComparePlayerPage({ data }) {
 
   return (
-    <div className="flex flex-col items-center gap-8 p-4 w-full max-w-screen-lg m-auto">
+    <div className="flex flex-col items-center gap-8 w-full max-w-screen-lg m-auto">
       <div className="relative flex justify-between items-center p-4 w-full">
         <div className="flex flex-col gap-4 items-start">
-          <img src={data.comparePlayerStats.playerOne.headshot} width="100px" height="100px" className="object-cover rounded-full border-2 bg-white border-black" />
+          <img src={data.comparePlayerStats.playerOne.headshot} width="100px" height="100px" className="object-cover rounded-full border bg-white border-black" />
           <div className="flex flex-col">
             <span className="text-left">{data.comparePlayerStats.playerOne.firstName.default}</span>
             <span className="text-left font-bold text-2xl">{data.comparePlayerStats.playerOne.lastName.default}</span>
@@ -19,7 +19,7 @@ export default function CSComparePlayerPage({ data }) {
         </div>
         <p className="font-bold absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">vs</p>
         <div className="flex flex-col gap-4 items-end">
-          <img src={data.comparePlayerStats.playerTwo.headshot} width="100px" height="100px" className="object-cover rounded-full border-2 bg-white border-black" />
+          <img src={data.comparePlayerStats.playerTwo.headshot} width="100px" height="100px" className="object-cover rounded-full border bg-white border-black" />
           <div className="flex flex-col">
             <span className="text-right">{data.comparePlayerStats.playerTwo.firstName.default}</span>
             <span className="text-right font-bold text-2xl">{data.comparePlayerStats.playerTwo.lastName.default}</span>

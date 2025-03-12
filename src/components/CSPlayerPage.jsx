@@ -7,9 +7,9 @@ import CSTable from '@/components/CSTable';
 export default function CSPlayerPage({ data }) {
 
   return (
-    <div className="flex flex-col items-center gap-8 p-4 w-full max-w-screen-lg m-auto">
+    <div className="flex flex-col items-center gap-8 w-full max-w-screen-lg m-auto">
       <div className="flex flex-col gap-4 p-4">
-        <img src={data.playerStats.player.headshot} width="100px" height="100px" className="self-center object-cover object-center rounded-full border-2 bg-white border-black" />
+        <img src={data.playerStats.player.headshot} width="100px" height="100px" className="self-center object-cover object-center rounded-full border bg-white border-black" />
         <div className="flex flex-col self-center">
           <span className="text-center">{data.playerStats.player.firstName.default}</span>
           <span className="text-center font-bold text-2xl">{data.playerStats.player.lastName.default}</span>
